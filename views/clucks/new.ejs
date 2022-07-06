@@ -1,0 +1,17 @@
+<%- include("../partials/header.ejs") %>
+
+<% if (username) { %> 
+    <h1>Content</h1>
+    <form action="/clucks" method="POST">
+    
+        <%- include("../partials/formInput.ejs") %>
+    
+            <input type="submit" value="Cluck!" class="btn btn-outline-success">
+    </form>
+<% } else { %>
+    <button type="button" class="btn btn-secondary">
+        <a class="navbar-brand" href="../sign_in">Please Sign in first before creating cluck!</a>
+    </button>    
+<% } %>
+
+<%- include("../partials/footer.ejs") %>

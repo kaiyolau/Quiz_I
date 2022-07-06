@@ -1,0 +1,17 @@
+<div class="card">
+
+    <div class="form-group">
+        <textarea name="content" placeholder="Whatchoo cluckin' 'bout?" cols="60" rows="5"><%- cluck ? cluck.content : '' %>
+      </textarea>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="image_url">Image Url</label>
+        <input type="url" class="form-control" name="image_url" placeholder="e.g. http://image.com/myPic.jpg"
+            value="<%= cluck ? cluck.image_url : '' %>">
+    </div>
+    <br>
+</div>
+
+
+
