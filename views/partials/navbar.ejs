@@ -1,0 +1,33 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="d-flex flex-row">
+            <div class="me-5">
+                <a class="navbar-brand" href="/">
+                    <img src="https://twemoji.maxcdn.com/v/latest/svg/1f413.svg" alt="cluckr" width="50" height="50">
+                </a>
+            </div>
+
+        <a class="navbar-brand" href="../clucks/new">Cluck!</a>
+
+        <ul class="navbar-nav">
+        
+            <% if (username) { %>
+                <li class="nav-item">
+                    <span>Username: <%- username %></span>
+                    <form action="/sign_out" method="POST">
+                        <button type="submit" class='btn btn-outline-dark'>Sign Out</button>
+                    </form>
+                </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <form action="/sign_in" method="POST" class='form-inline'>
+                            <button type="submit" class='btn btn-outline-dark'><a class="nav-link" href="../sign_in">Sign In</a></button>
+                        </form>
+                    </li>
+                    <% } %>
+        </ul>
+
+    </nav>
+</header>
+<br>
+<hr />

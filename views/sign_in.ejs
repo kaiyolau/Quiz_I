@@ -1,0 +1,29 @@
+<%- include("./partials/header.ejs") %>
+<div class="card" style="width: 30rem;">
+    <div class="card-body">
+        <h5 class="card-title">Username</h5>
+        <ul class="navbar-nav">
+        
+            <% if (username) { %>
+                <li class="nav-item">
+                    <span>Hello, <%- username %>!</span>
+                    <form action="/sign_out" method="POST">
+                        <button type="submit" class='btn btn-outline-dark'>Sign Out</button>
+                    </form>
+                </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <form action="/sign_in" method="POST" class='form-inline'>
+                            <input class='form-control mr-2' name='username' placeholder='e.g. Madam Welminster' type="text">
+                            <br>
+                            <br>
+                            <button type="submit" class='btn btn-outline-dark'>Sign In</button>
+                        </form>
+                    </li>
+                    <% } %>
+        </ul>
+
+    </div>
+</div>
+<hr />
+<%- include("./partials/footer.ejs") %>

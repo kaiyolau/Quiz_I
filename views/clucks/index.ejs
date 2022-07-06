@@ -1,0 +1,27 @@
+<%- include("../partials/header.ejs") %>
+    <h1>The Clucks Index</h1>
+
+
+    <div class="card" style="width: 30rem;">
+        <% for (let cluck of clucks) { %>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%- cluck.username %>
+                </h5>
+                <h6 class="card-title">
+                    <%- cluck.created_at %>
+                </h6>
+                <p class="card-text">
+                    <%- cluck.content %>
+                </p>
+                <hr>
+                <% if(cluck.image_url) { %>
+                    <img class="card-img-top" src="<%- cluck.image_url %>" alt="cluck image">
+                <% } %>
+            </div>
+            <br>
+            <% } %>
+            <br>
+    </div>
+
+    <%- include("../partials/footer.ejs") %>
